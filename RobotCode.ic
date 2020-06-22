@@ -1,0 +1,133 @@
+ void forward()/*Function to move forward*/
+{
+    motor(0, 50);
+    motor(3, -50);
+}
+void backward()/*Function to move backward*/
+{
+    motor(0, -50);
+    motor(3, 50);
+}
+void turn_back()/*fuction to rotate*/
+{
+    motor(0,70);
+    motor(3,70);
+}
+void reverse_flash()/*Function to move backward*/
+{
+    motor(0, -90);
+    motor(3, 90);
+}
+
+void turn_right() /* Function to control the hit on left bumper */
+{
+    off(0);
+    off(3);
+    backward();/*Makes the Robot reverse*/
+    sleep(1.0);
+    motor(0, 80);
+    motor(3, 80);
+    sleep(1.0);/*Makes the Robot turn right*/
+    forward();
+}
+void turn_left() /* Function to control the hit on right bumper */
+{
+    off(0);
+    off(3);
+    backward();/*Makes the Robot reverse*/
+    sleep(1.0);
+    motor(0, -80);
+    motor(3, -80);
+    sleep(1.0);/*Makes the Robot turn left*/
+    forward();
+}
+void bumper()/*Function to control the bumpers on the right and left when hit*/
+{
+    if (digital(15) == 1)
+      {
+        turn_right();/*Calls the moveright function which reverses and then turns the robot to the right*/
+    }
+    else if (digital(10) == 1)
+      {
+        turn_left();/*Calls the moveleft function which reverses and then turns the robot to the left*/
+    }
+}
+void flip()/*Function to flip the cube*/
+{
+    off(0);
+    off(3);
+    sleep(0.6);
+    servo2=2900;/*lowers the arm of the servo*/
+    sleep(0.3);
+    reverse_flash();
+    sleep(0.25);
+    off(0);
+    off(3);
+    servo2=4400;/* arms back to its raising position*/
+}
+void shoot_ronaldo()/*Function to take to the goal*/
+{
+    forward();
+    sleep(0.4);/*The robot moves forward to make sure the cube is inside the robot*/
+    while(analog(4)>100)
+      {
+        motor(0,100);
+        motor(3,100);
+    }/*rotates until finds the goal*/
+    goal();
+}
+void goal()/* function to put the cube to the goal*/
+{
+    while(analog(4)>50)
+      {
+        forward();
+    }
+    off(0);
+    off(3);
+    sleep(0.2);
+    reverse_flash();
+    sleep(0.8);
+    turn_back();
+    sleep(1.0);
+}
+
+
+void main()
+{
+    init_expbd_servos(1);
+    while(1)
+      {
+        
+        if (start_button()==1)
+          {
+            while(1)
+              {
+                forward();
+                bumper();
+                    
+                
+               if(analog(2)>150 && analog(21)<10)
+                  {
+                    forward();
+                    sleep(.3);
+                    flip();
+                    forward();
+                    sleep(0.5);
+                }
+                else if(analog(2)>150 && analog(21)>12)
+                  {
+                    shoot_ronaldo();
+                    break;
+                }
+                else
+                  {
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+
+
