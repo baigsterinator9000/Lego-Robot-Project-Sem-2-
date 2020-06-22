@@ -36,10 +36,10 @@ This is the arena where the competition took place
 
 ![The Arena](https://raw.githubusercontent.com/baigsterinator9000/Lego-Robot-Project-Sem-2-/master/RobotPics/20161110_104856.jpg)
 ### Flipping
-![Flipping](https://media.giphy.com/media/Rkz7CSL0Fwb3b52Hsw/giphy.gif)
+![Flipping](https://raw.githubusercontent.com/baigsterinator9000/Lego-Robot-Project-Sem-2-/master/RobotPics/Flipping.gif)
 ### Scoring
-![Scoring](https://media.giphy.com/media/j2wwjvLaAL2lKZCRwO/giphy.gif)
+![Scoring](https://raw.githubusercontent.com/baigsterinator9000/Lego-Robot-Project-Sem-2-/master/RobotPics/Scoring.gif)
 ### Navigating
-![Bumping](https://media.giphy.com/media/Xbt9LaEvGuSDxQpNLn/giphy.gif)
+![Bumping](https://raw.githubusercontent.com/baigsterinator9000/Lego-Robot-Project-Sem-2-/master/RobotPics/Bumping.gif)
 
 Full video here >> [Lego Robot Tournament](https://www.youtube.com/watch?v=luLTKh0Fiyc)
